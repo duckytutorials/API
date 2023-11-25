@@ -1,0 +1,10 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "rules": {
+    // Add your custom rules here
+  }
+}

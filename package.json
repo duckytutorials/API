@@ -2,25 +2,25 @@
   "name": "app",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.js",
-    "start": "bun run --watch src/index.js",
-    "db:gen": "drizzle-kit generate:pg",
-    "db:studio": "drizzle-kit studio",
-    "fmt": "prettier ",
-    "lint": ""
+    "format": "prettier --write . ",
+    "lint": "eslint \"src/**/*.{js,ts}\"",
+    "start": "bun run src/index.ts",
+    "check": "bun run format && bun run lint && bun test"
   },
   "dependencies": {
     "@elysiajs/cors": "^0.7.1",
     "@elysiajs/html": "^0.7.0",
+    "@elysiajs/swagger": "^0.7.4",
     "@types/body-parser": "^1.19.5",
     "@types/cors": "^2.8.17",
+    "@typescript-eslint/eslint-plugin": "latest",
     "body-parser": "^1.20.2",
     "chalk": "^5.3.0",
     "drizzle-orm": "^0.29.0",
     "elysia": "^0.7.29",
     "eslint": "^8.54.0",
-    "postgres": "^3.4.3"
+    "postgres": "^3.4.3",
+    "prettier": "^3.1.0"
   },
   "devDependencies": {
     "bun-types": "latest",
