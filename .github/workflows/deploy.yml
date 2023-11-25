@@ -18,7 +18,7 @@ jobs:
       - name: Lint
         run: bun lint > logs.txt
       - name: Format
-        run: bun fmt >> logs.txt
+        run: bun format >> logs.txt
       - name: Running Tests
         run: bun test
 
