@@ -1,15 +1,19 @@
-import { Elysia, t } from "elysia";
+import { Elysia } from 'elysia';
+import { tea } from './routes';
 
-const App = new Elysia()
-  .get(
-    "/favservers",
-    async ({ body }) => {
-      
-    }
+export const app = new Elysia();
+
+app
+  .get('/', ({ set }) => {
+    set.redirect = 'https://teaclient.net/docs/api/intro/';
+  })
+  .post(
+    '/',
+    () => 'Wellcome to TeaClient API If you need help check out the docs',
   )
-
-  .listen(8080);
+  .group('/premium', tea)
+  .listen(6097);
 
 console.log(
-  `🦊 Elysia app running at ${App.server?.hostname}:${App.server?.port}`
-);
+  `☕️ TeaClient API Is running at ${app.server?.hostname}:${app.server?.port}`,
+); //* consoles server online

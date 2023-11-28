@@ -1,11 +1,10 @@
-import { serial, text, timestamp, pgTable } from "drizzle-orm/pg-core";
+import { boolean, bigint, text, pgTable } from 'drizzle-orm/pg-core';
 
-export const user = pgTable("user", {
- id: serial("id"),
- name: text("name"),
- email: text("email"),
- password: text("password"),
- role: text("role").$type<"admin" | "customer">(),
- createdAt: timestamp("created_at"),
- updatedAt: timestamp("updated_at"),
+export const premiumtable = pgTable('tableName', {
+  uuid: text('uuid'),
+  active: boolean('active'),
+  ends: bigint('ends', { mode: 'number' }),
+  name: text('name'),
+  start: bigint('starts', { mode: 'number' }),
+  success: boolean('success'),
 });
